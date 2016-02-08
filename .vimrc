@@ -129,6 +129,7 @@ let g:vimrubocop_keymap = 0
 Plug 'scrooloose/syntastic'                                         " syntastic - Syntax Checker
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_w = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_perl_checker = 1
