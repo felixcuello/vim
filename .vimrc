@@ -1,184 +1,138 @@
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 "
-"  VIM Configuration File Optimized for Perl Programming
+"  VIM Configuration File Optimized for Programming
 "
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-" - - - - - - - - - - - - - - - - -
+" - - - - - - - - - - - - -
+"  1. Introduction
+" - - - - - - - - - - - - -
 "
-"  INSTALLATION INSTRUCTIONS
+"  After some time writing code with VIM I have arrived to this configuration
+"  file with match most of my needs when coding both Perl and Ruby.
 "
-" - - - - - - - - - - - - - - - - -
+"  It's clearly not a definitive file and I will change from time to time
+"  but if you get this file I hope it will help you to code faster :-)
+"
+"  This file come to you with absoulte NO warranty
+"  ( specially if you are a bad coder ;) )
+"
 
+
+
+" - - - - - - - - - - - - - - - - - - - -
+"  2. Installation Instructions
+" - - - - - - - - - - - - - - - - - - - -
+"
+"
 " 1. Create new backup directories
-" mkdir -p ~/.vim/{backup_files,swap_files,undo_files}
-
-" 2. Download Plugged
-" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-" 3. Link molokai && monokai
-" mkdir ~/.vim/colors && ln -s ~/.vim/plugged/molokai/colors/molokai.vim ~/.vim/colors && ln -s /home/vagrant/.vim/plugged/vim-monokai/colors/monokai.vim ~/.vim/colors
-
-
-" - - - - - - - - - - - - - - - - -
-
-
-" To move backup files to other directories:
-" mkdir -p ~/.vim/{backup_files,swap_files,undo_files}
-set backupdir=~/.vim/backup_files//
-set directory=~/.vim/swap_files//
-set undodir=~/.vim/undo_files//
-
-set nowrap
-
-
-" - - - - - - - - - - - - - - - -
+"  $ mkdir -p ~/.vim/{backup_files,swap_files,undo_files,colors}
 "
-"  General VIM configuration
 "
-" - - - - - - - - - - - - - - - -
-syntax on                       " Syntax highlighting
-colorscheme monokai             " I can't believe it's not sublime
-
-set t_Co=256
-set number                      " Numbering lines
-set noeol                       " Not end of line
-set binary                      " Binary
-set hlsearch                    " Highlight search"
-set autoindent                  " Autoindent
-set nocindent                   " Good autoindent :-)
-set tabstop=2                   " Tab should be 4
-set softtabstop=2               " insert mode tab and backspace 
-set shiftwidth=2
-set expandtab                   " Use spaces instead tab
-set incsearch                   " Incremental search
-set smartcase                   " Use case sensitive smart
-set ignorecase                  " Use iwth smart case for best searching experience"
-set backspace=2                 " Because I like this backspace behavior
-set tags=~/tm/master/tags       " Tags for TMOL
-set laststatus=2                " Status line always present
-set wildmenu                    " show a navigable menu for tab completion
-set wildmode=longest,list,full
-
-let mapleader = ","             " Oh yeah!   ,  should be the map leader
-let perl_include_pod = 1        " Include POD in Syntax Highlight
-let perl_extended_vars = 1      " Highlight complex structures
-
-
-"- - - - - - - - - - - - - - - -
+" 2. Download Plugged (which is the plugin manager I decided to use)
+"  $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "
-"   Shortcuts
 "
-"- - - - - - - - - - - - - - - -
-map <C-n> <leader>vv
+" 3. Link to monokai  (you can use molokai if you want)
+"  $ ln -s ~/.vim/plugged/molokai/colors/molokai.vim ~/.vim/colors
+"  $ ln -s ~/.vim/plugged/vim-monokai/colors/monokai.vim ~/.vim/colors
+"
+
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+"  3. Shortcuts!
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+let mapleader = ","                     " Yes!, comma must be the leader
+
+" Fuzzy Finder
 map <C-p> :FZF<CR>
-map <C-c> :SyntasticCheck<CR>
-nnoremap <leader>a :tabprevious<CR>
-nnoremap <leader>s :tabnext<CR>
-nnoremap <leader>n :tabedit 
-nnoremap <leader>w :tabclose<CR>
-nnoremap <leader>t :NERDTree<CR>
-map <leader>r :!ctags -R ~/tm/master/*web*/lib/perl/ && mv tags ~/tm/mater/tags
-nnoremap <leader>d :TagbarToggle<CR><C-w><C-w>
-nnoremap <leader>. :CtrlPTag<cr>
+map <C-f> <leader>vV
+map <leader>a :tabprevious<CR>
+map <leader>s :tabnext<CR>
+map <leader>q :cp<CR>
+map <leader>w :cn<CR>
+map <leader>c :SyntasticCheck<CR>
+map <leader>d :TagbarToggle<CR><C-w><C-w>
+map <Leader>r :RuboCop<CR>
+map <leader>t :NERDTree<CR>
 
-"- - - - - - - - - - - - - - - -
-"
-"   Plugin Section
-"
-" - - - - - - - - - - - - - - - -
 
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+"  Don't like backup/swap files everywhere, so I confined them here
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+set backupdir=~/.vim/backup_files/
+set directory=~/.vim/swap_files/
+set undodir=~/.vim/undo_files/
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+"  General Vim Configuration
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+syntax on                               " Who can work without syntax highlighting ?
+colorscheme molokai
+
+set binary                              " Don't remember :-) (?)
+set backspace=2                         " Because I like this backspace behavior
+set laststatus=2                        " Status line always present
+set nowrap                              " If you're a good coder, you shouldn't note the difference
+set noeol                               " Not end of line (?)
+set number                              " Numbering lines
+set t_Co=256                            " Terminal Colors (Yeah 256 colors is enough)
+set wildmenu                            " show a navigable menu for tab completion
+set wildmode=longest,list,full          " More configurations for wild-menu
+
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+"  Search Configuration
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+set hlsearch                            " Highlight search (sometimes is awful)
+set ignorecase                          " Use iwth smart case for best searching experience"
+set incsearch                           " Incremental search
+set smartcase                           " Use case sensitive smart
+
+
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+" To Tab Or Not To Tab, that's the flame-war
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+set autoindent                          " Autoindent
+set expandtab                           " Use spaces instead tab
+set nocindent                           " Good autoindent :-)
+set softtabstop=2                       " insert mode tab and backspace 
+set shiftwidth=2                        " Don't Remember
+set tabstop=2                           " Tab should be 4
+
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+"  Plugins! (and its configurations)
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 call plug#begin('~/.vim/plugged')
 
-"" Fuzzy Finder (I like this more than ctrlP), so you decide what to use :-)
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-
-"" Perl code completion
-Plug 'c9s/perlomni.vim'
-
-"" AUtomatic autocomplete
-Plug 'Shougo/neocomplete.vim'
-let g:neocomplete#enable_at_startup = 1
-
-"" Grep in all files
-Plug 'dkprice/vim-easygrep'
-
-"" CtrlP
-Plug 'kien/ctrlp.vim'
-let g:ctrlp_map = '<c-o>'
-
-"" FuzzyFinder is faster than CtrlP
-Plug 'junegunn/fzf'
-
-"" CTAGs 
-Plug 'majutsushi/tagbar'
-
-"" Check syntax on the fly
-Plug 'scrooloose/syntastic'
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_w = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_perl_checker = 1
-let g:syntastic_perl_checkers = ['perl']
-let g:syntastic_perl_lib_path = [ '/mgr/shared/home/tmweb/tm/master/tmweb/lib/perl', '/mgr/shared/home/tmweb/tm/master/webcore/lib/perl' ]
-
-"" Supertab (to autocomplete using tab)
-Plug 'ervandew/supertab'
-
-"" 256 colorscheme
-Plug 'sickill/vim-monokai'      " This is a 'sublime' like colorscheme
-Plug 'tomasr/molokai'           " This is the REAL sublime like colorscheme
-Plug 'jpo/vim-railscasts-theme' " This is a theme to test
-
-"" Better Status Line
-Plug 'bling/vim-airline'
-let g:airline_theme = 'powerlineish'
+Plug 'bling/vim-airline'                                            " airline - a very nice statys line
+Plug 'vim-airline/vim-airline-themes'                               " airline - themes
+let g:airline_theme = 'papercolor'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-
-"" Persistent visuals in vim
-Plug 'galli-a/persistentvisuals'
-
-"" Git Wrapper
-Plug 'tpope/vim-fugitive'
-
-"" Autocomplete quotes, braces, parens, etc.
-Plug 'Raimondi/delimitMate'
-
-"" VIM Perl various syntaxes :-)
-Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
-autocmd BufNewFile,BufRead *.tt setf tt2    " This activate template toolkit syntax highlighting
-
-"" Git diff in real time
-Plug 'airblade/vim-gitgutter'
-
-"" JSON syntax highlight
-Plug 'elzr/vim-json'
-
-"" Indentation Lines
-Plug 'Yggdroot/indentLine'
-
-"" Configuration for Cucumber
-Plug 'tpope/vim-cucumber'
-au Bufread,BufNewFile *.feature set filetype=gherkin
-au! Syntax gherkin source ~/.vim/cucumber.vim
-
-"" This is to learn GoLang in my free time 
-Plug 'fatih/vim-go'
-
-"" Nerd Tree
-Plug 'scrooloose/nerdtree'
-
-"" GraphViz Plugin
-Plug 'wannesm/wmgraphviz.vim'
-
-"" Highlight Trailing Spaces in Red
-Plug 'bronson/vim-trailing-whitespace'
+Plug 'dkprice/vim-easygrep'                                         " easygrep
+let g:EasyGrepRecursive=1
+Plug 'Raimondi/delimitMate'                                         " delimitmate - Autocomplete braces and quotes
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }  " fuzzyfinder - FZF probably the best vim-plugin
+Plug 'airblade/vim-gitgutter'                                       " gitgutter - To see git changes beside line numbers
+Plug 'tomasr/molokai'                                               " molokai - Sublime like colorscheme
+Plug 'sickill/vim-monokai'                                          " monokai - Nice colorscheme
+Plug 'scrooloose/nerdtree'                                          " nerdtree - Very nice file manager
+Plug 'galli-a/persistentvisuals'                                    " persistentvisuals - This is nice when you use < or > to reindent
+Plug 'ngmy/vim-rubocop'                                             " rubocop - Ruby specific to check syntax
+let g:vimrubocop_config = '~/rubocop.yml'
+let g:vimrubocop_keymap = 0
+Plug 'scrooloose/syntastic'                                         " syntastic - Syntax Checker
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_w = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_perl_checker = 1
+Plug 'majutsushi/tagbar'                                            " tagbar
+Plug 'bronson/vim-trailing-whitespace'                              " trailing-whitespace - Mark trailing whitespaces in red
 
 call plug#end()
-
