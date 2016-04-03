@@ -67,6 +67,7 @@ map <leader>w :cn<CR>
 map <leader>d :TagbarToggle<CR><C-w><C-w>
 map <Leader>r :RuboCop<CR>
 map <leader>t :NERDTree<CR>
+map <leader>cr :!ruby -c %<CR>
 
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
