@@ -81,7 +81,7 @@ set undodir=~/.vim/undo_files/
 "  General Vim Configuration
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 syntax on                               " Who can work without syntax highlighting ?
-colorscheme idle
+colorscheme monokai
 
 set binary                              " Don't remember :-) (?)
 set encoding=utf-8                      " Set encoding to UTF8
