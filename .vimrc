@@ -138,6 +138,7 @@ Plug 'Raimondi/delimitMate'                                         " delimitmat
 Plug 'tpope/vim-fugitive'                                           " fugitive - GIT with stereoids for vim
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }  " fuzzyfinder - FZF probably the best vim-plugin
 Plug 'airblade/vim-gitgutter'                                       " gitgutter - To see git changes beside line numbers
+"Plug 'terryma/vim-multiple-cursors'                                 " multiple cursors - I put this disabled since is very CPU consuming if you use it
 Plug 'scrooloose/nerdtree'                                          " nerdtree - Very nice file manager
 Plug 'galli-a/persistentvisuals'                                    " persistentvisuals - This is nice when you use < or > to reindent
 Plug 'ngmy/vim-rubocop'                                             " rubocop - Ruby specific to check syntax
