@@ -39,6 +39,7 @@
 "  $ ln -s ~/.vim/plugged/vim-monokai/colors/monokai.vim ~/.vim/colors
 "  $ ln -s ~/.vim/plugged/vim-valloric-colorscheme/colors/valloric.vim ~/.vim/colors
 "  $ ln -s ~/.vim/plugged/idle/colors/idle.vim ~/.vim/colors
+"  $ ln -s ~/.vim/plugged/badwolf/colors/badwolf.vim ~/.vim/colors
 "
 "
 " 4. You must install these fonts if you want to see special characters in the
@@ -81,7 +82,7 @@ set undodir=~/.vim/undo_files/
 "  General Vim Configuration
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 syntax on                               " Who can work without syntax highlighting ?
-colorscheme molokai
+colorscheme badwolf
 
 set binary                              " Don't remember :-) (?)
 set encoding=utf-8                      " Set encoding to UTF8
@@ -124,6 +125,7 @@ Plug 'pkukulak/idle'                                                " idle    - 
 Plug 'tomasr/molokai'                                               " molokai - Sublime like colorscheme
 Plug 'sickill/vim-monokai'                                          " monokai - Nice colorscheme
 Plug 'Valloric/vim-valloric-colorscheme'                            " valoric - High contrast colorscheme
+Plug 'sjl/badwolf'                                                  " badwolf - Good high contrats colorscheme
 
 Plug 'bling/vim-airline'                                            " airline - a very nice statys line
 Plug 'vim-airline/vim-airline-themes'                               " airline - themes
