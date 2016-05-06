@@ -58,9 +58,10 @@ map <leader>g- :Git checkout -- %<CR>
 map <leader>ga :Gwrite<CR>
 map <leader>gb :Gblame<CR>
 map <leader>gc :Gcommit<CR>
-map <leader>gp :Gpull<CR>
 map <leader>gr :Git reset %<CR>
+map <leader>gp :Gpush<CR>
 map <leader>gs :Gstatus<CR>
+map <leader>gu :Gpull<CR>
 map <leader>a :tabprevious<CR>
 map <leader>s :tabnext<CR>
 map <leader>q :cp<CR>
