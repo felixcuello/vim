@@ -53,7 +53,7 @@
 let mapleader = ","                     " Yes!, comma must be the leader
 
 map <C-p> :FZF<CR>
-map <C-f> <leader>vV
+map <C-f> :Ag! --hidden -a <C-R><C-W><CR>
 map <leader>g- :Git checkout -- %<CR>
 map <leader>ga :Gwrite<CR>
 map <leader>gb :Gblame<CR>
@@ -136,8 +136,8 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-Plug 'dkprice/vim-easygrep'                                         " easygrep
-let g:EasyGrepRecursive=1
+Plug 'rking/ag.vim'                                                 " ag - Silver Searcher plugin (the fastest searcher)
+let g:ag_working_path_mode="r"                                      " ag > start searching from your project root instead of the cwd
 Plug 'Raimondi/delimitMate'                                         " delimitmate - Autocomplete braces and quotes
 Plug 'tpope/vim-fugitive'                                           " fugitive - GIT with stereoids for vim
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }  " fuzzyfinder - FZF probably the best vim-plugin
