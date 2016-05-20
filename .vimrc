@@ -69,7 +69,7 @@ map <leader>w :cn<CR>
 "map <leader>c :SyntasticCheck<CR>
 map <leader>d :TagbarToggle<CR><C-w><C-w>
 map <Leader>r :RuboCop<CR>
-map <leader>t :NERDTree<CR>
+map <leader>t :NERDTreeTabsToggle<CR>
 map <leader>cr :!ruby -c %<CR>
 
 
@@ -144,6 +144,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }  " fuzzyfinde
 Plug 'airblade/vim-gitgutter'                                       " gitgutter - To see git changes beside line numbers
 Plug 'terryma/vim-multiple-cursors'                                 " vim-multiple-cursors - To edit files w/multiple cursors
 Plug 'scrooloose/nerdtree'                                          " nerdtree - Very nice file manager
+Plug 'jistr/vim-nerdtree-tabs'                                      " nerdtree - Tabs, to use tabs painlessly
 Plug 'galli-a/persistentvisuals'                                    " persistentvisuals - This is nice when you use < or > to reindent
 Plug 'ngmy/vim-rubocop'                                             " rubocop - Ruby specific to check syntax
 let g:vimrubocop_config = '~/rubocop.yml'
