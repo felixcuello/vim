@@ -53,6 +53,10 @@
 let mapleader = ","                     " Yes!, comma must be the leader
 
 map <C-f> :Ag! --hidden -a <C-R><C-W><CR>
+map <leader>a :tabprevious<CR>
+map <leader>cr :!ruby -c %<CR>
+map <leader>d :TagbarToggle<CR><C-w><C-w>
+map <leader>e :SyntasticCheck<CR>
 map <leader>g- :Git checkout -- %<CR>
 map <leader>ga :Gwrite<CR>
 map <leader>gb :Gblame<CR>
@@ -61,15 +65,11 @@ map <leader>gr :Git reset %<CR>
 map <leader>gp :Gpush<CR>
 map <leader>gs :Gstatus<CR>
 map <leader>gu :Gpull<CR>
-map <leader>a :tabprevious<CR>
 map <leader>s :tabnext<CR>
 map <leader>q :cp<CR>
-map <leader>w :cn<CR>
-"map <leader>c :SyntasticCheck<CR>
-map <leader>d :TagbarToggle<CR><C-w><C-w>
 map <Leader>r :RuboCop<CR>
 map <leader>t :NERDTreeTabsOpen<CR>
-map <leader>cr :!ruby -c %<CR>
+map <leader>w :cn<CR>
 
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -150,9 +150,10 @@ Plug 'galli-a/persistentvisuals'                                    " persistent
 Plug 'ngmy/vim-rubocop'                                             " rubocop - Ruby specific to check syntax
 let g:vimrubocop_config = '~/rubocop.yml'
 let g:vimrubocop_keymap = 0
-"Plug 'scrooloose/syntastic'                                         " syntastic - Syntax Checker
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
+Plug 'scrooloose/syntastic'                                         " syntastic - Syntax Checker
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 "let g:syntastic_check_on_open = 0
 "let g:syntastic_check_on_wq = 0
 "let g:syntastic_enable_perl_checker = 1
