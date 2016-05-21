@@ -52,7 +52,6 @@
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 let mapleader = ","                     " Yes!, comma must be the leader
 
-map <C-p> :FZF<CR>
 map <C-f> :Ag! --hidden -a <C-R><C-W><CR>
 map <leader>g- :Git checkout -- %<CR>
 map <leader>ga :Gwrite<CR>
@@ -69,7 +68,7 @@ map <leader>w :cn<CR>
 "map <leader>c :SyntasticCheck<CR>
 map <leader>d :TagbarToggle<CR><C-w><C-w>
 map <Leader>r :RuboCop<CR>
-map <leader>t :NERDTreeTabsToggle<CR>
+map <leader>t :NERDTreeTabsOpen<CR>
 map <leader>cr :!ruby -c %<CR>
 
 
@@ -84,7 +83,7 @@ set undodir=~/.vim/undo_files/
 "  General Vim Configuration
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 syntax on                               " Who can work without syntax highlighting ?
-colorscheme badwolf
+colorscheme molokai
 
 set binary                              " Don't remember :-) (?)
 set encoding=utf-8                      " Set encoding to UTF8
@@ -138,9 +137,11 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 Plug 'rking/ag.vim'                                                 " ag - Silver Searcher plugin (the fastest searcher)
 let g:ag_working_path_mode="r"                                      " ag > start searching from your project root instead of the cwd
+Plug 'ctrlpvim/ctrlp.vim'                                           " ctrp+p Plugin - Fuzzy Finder Plugin
 Plug 'Raimondi/delimitMate'                                         " delimitmate - Autocomplete braces and quotes
 Plug 'tpope/vim-fugitive'                                           " fugitive - GIT with stereoids for vim
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }  " fuzzyfinder - FZF probably the best vim-plugin
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }  " fuzzyfinder - Unfortunately does not work in MacVim
+"map <C-p> :FZF<CR>
 Plug 'airblade/vim-gitgutter'                                       " gitgutter - To see git changes beside line numbers
 Plug 'terryma/vim-multiple-cursors'                                 " vim-multiple-cursors - To edit files w/multiple cursors
 Plug 'scrooloose/nerdtree'                                          " nerdtree - Very nice file manager
