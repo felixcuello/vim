@@ -53,6 +53,7 @@
 let mapleader = ","                     " Yes!, comma must be the leader
 
 map <C-f> :Ag! --hidden -a <C-R><C-W><CR>
+map <C-t> <C-S-]>
 map <leader>a :tabprevious<CR>
 map <leader>cr :!ruby -c %<CR>
 map <leader>d :TagbarToggle<CR><C-w><C-w>
@@ -82,19 +83,23 @@ set undodir=~/.vim/undo_files/
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 "  General Vim Configuration
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-syntax on                               " Who can work without syntax highlighting ?
+syntax on                                           " Who can work without syntax highlighting
 colorscheme molokai
 
-set binary                              " Don't remember :-) (?)
-set encoding=utf-8                      " Set encoding to UTF8
-set backspace=2                         " Because I like this backspace behavior
-set laststatus=2                        " Status line always present
-set nowrap                              " If you're a good coder, you shouldn't note the difference
-set noeol                               " Not end of line (?)
-set number                              " Numbering lines
-set t_Co=256                            " Terminal Colors (Yeah 256 colors is enough)
-set wildmenu                            " show a navigable menu for tab completion
-set wildmode=longest,list,full          " More configurations for wild-menu
+set binary                                          " Don't remember :-) (?)
+set encoding=utf-8                                  " Set encoding to UTF8
+set backspace=2                                     " Because I like this backspace behavior
+set laststatus=2                                    " Status line always present
+set nowrap                                          " If you're a good coder, you shouldn't note the difference
+set noeol                                           " Not end of line (?)
+set number                                          " Numbering lines
+set t_Co=256                                        " Terminal Colors (Yeah 256 colors is enough)
+set wildmenu                                        " show a navigable menu for tab completion
+set wildmode=longest,list,full                      " More configurations for wild-menu
+set colorcolumn=110                                 " Set a visual wrap line
+highlight ColorColumn guibg=Red                     " Set Red Color for visual wrap line
+highlight ColorColumn ctermbg=Red                   " Set Red Color for visual wrap line
+set guifont=Roboto\ Mono\ light\ for\ Powerline:h14 " I really like this font
 
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -113,7 +118,7 @@ set smartcase                           " Use case sensitive smart
 set autoindent                          " Autoindent
 set expandtab                           " Use spaces instead tab
 set nocindent                           " Good autoindent :-)
-set softtabstop=2                       " insert mode tab and backspace 
+set softtabstop=2                       " insert mode tab and backspace
 set shiftwidth=2                        " Don't Remember
 set tabstop=2                           " Tab should be 4
 
@@ -140,8 +145,6 @@ let g:ag_working_path_mode="r"                                      " ag > start
 Plug 'ctrlpvim/ctrlp.vim'                                           " ctrp+p Plugin - Fuzzy Finder Plugin
 Plug 'Raimondi/delimitMate'                                         " delimitmate - Autocomplete braces and quotes
 Plug 'tpope/vim-fugitive'                                           " fugitive - GIT with stereoids for vim
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }  " fuzzyfinder - Unfortunately does not work in MacVim
-"map <C-p> :FZF<CR>
 Plug 'airblade/vim-gitgutter'                                       " gitgutter - To see git changes beside line numbers
 Plug 'terryma/vim-multiple-cursors'                                 " vim-multiple-cursors - To edit files w/multiple cursors
 Plug 'scrooloose/nerdtree'                                          " nerdtree - Very nice file manager
