@@ -50,26 +50,45 @@
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 "  3. Shortcuts!
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-let mapleader = ","                     " Yes!, comma must be the leader
-
+let mapleader=","                                                   " Yes!, comma must be the leader
 map <C-f> :Ag! --hidden -a <C-R><C-W><CR>
-map <C-t> <C-S-]>
+" ,<CR> | Open tags (press C-t to return)
+map <leader><CR> <C-]>
+" ,a    | Tab left
 map <leader>a :tabprevious<CR>
+" ,cr   | Checks for ruby syntax
 map <leader>cr :!ruby -c %<CR>
-map <leader>d :TagbarToggle<CR><C-w><C-w>
+" ,e    | Check syntax
 map <leader>e :SyntasticCheck<CR>
+" ,d    | Open definition in a new tab
+map <leader>d :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" ,g-   | git checkout -- <file>
 map <leader>g- :Git checkout -- %<CR>
+" ,ga   | git add <file>
 map <leader>ga :Gwrite<CR>
+" ,gb   | git blame <file>
 map <leader>gb :Gblame<CR>
+" ,gc   | git commit <file>
 map <leader>gc :Gcommit<CR>
+" ,gr   | git reset <file>
 map <leader>gr :Git reset %<CR>
+" ,gp   | git push <file>
 map <leader>gp :Gpush<CR>
+" ,gs   | git status <file>
 map <leader>gs :Gstatus<CR>
+" ,gu   | git pull <file>
 map <leader>gu :Gpull<CR>
+" ,m    | Open Method's Definition
+map <leader>m :TagbarToggle<CR><C-w><C-w>
+" ,s    | Tab right
 map <leader>s :tabnext<CR>
+" ,q    | Previous Buffer
 map <leader>q :cp<CR>
+" ,r    | Check Ruby Syntax
 map <Leader>r :RuboCop<CR>
+" ,t    | Open Tree Directory
 map <leader>t :NERDTreeTabsOpen<CR>
+" ,w    | Next buffer
 map <leader>w :cn<CR>
 
 
@@ -100,6 +119,8 @@ set colorcolumn=110                                 " Set a visual wrap line
 highlight ColorColumn guibg=Red                     " Set Red Color for visual wrap line
 highlight ColorColumn ctermbg=Red                   " Set Red Color for visual wrap line
 set guifont=Roboto\ Mono\ light\ for\ Powerline:h14 " I really like this font
+set autochdir                                       " ctags configuration
+set tags=tags;                                      " ctags configuration
 
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
