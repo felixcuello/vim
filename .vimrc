@@ -50,18 +50,22 @@
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 "  3. Shortcuts!
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-let mapleader=","                                                   " Yes!, comma must be the leader
+" <C-f>  Find everywhere
 map <C-f> :Ag! --hidden -a <C-R><C-W><CR>
-" ,<CR> | Open tags (press C-t to return)
-map <leader><CR> <C-]>
+" <C-CR> Open Definition (ctags)
+map <C-CR> <C-]>
+" <C-BS> Go back from the definition
+map <C-BS> <C-t>
+
+let mapleader=","                                                   " Yes!, comma must be the leader
+" ,<CR> | Open definition in a new tab
+map <leader><CR> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " ,a    | Tab left
 map <leader>a :tabprevious<CR>
 " ,cr   | Checks for ruby syntax
 map <leader>cr :!ruby -c %<CR>
 " ,e    | Check syntax
 map <leader>e :SyntasticCheck<CR>
-" ,d    | Open definition in a new tab
-map <leader>d :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " ,g-   | git checkout -- <file>
 map <leader>g- :Git checkout -- %<CR>
 " ,ga   | git add <file>
@@ -87,7 +91,7 @@ map <leader>q :cp<CR>
 " ,r    | Check Ruby Syntax
 map <Leader>r :RuboCop<CR>
 " ,t    | Open Tree Directory
-map <leader>t :NERDTreeTabsOpen<CR>
+map <leader>t :NERDTreeTabsToggle<CR>
 " ,w    | Next buffer
 map <leader>w :cn<CR>
 
@@ -116,9 +120,9 @@ set t_Co=256                                        " Terminal Colors (Yeah 256 
 set wildmenu                                        " show a navigable menu for tab completion
 set wildmode=longest,list,full                      " More configurations for wild-menu
 set colorcolumn=110                                 " Set a visual wrap line
-highlight ColorColumn guibg=Red                     " Set Red Color for visual wrap line
-highlight ColorColumn ctermbg=Red                   " Set Red Color for visual wrap line
-set guifont=Roboto\ Mono\ light\ for\ Powerline:h14 " I really like this font
+highlight ColorColumn guibg=red3                    " Set Red Color for visual wrap line
+highlight ColorColumn ctermbg=red                   " Set Red Color for visual wrap line
+set guifont=Roboto\ Mono\ light\ for\ Powerline:h15 " I really like this font
 set autochdir                                       " ctags configuration
 set tags=tags;                                      " ctags configuration
 
@@ -161,6 +165,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#fnamemod = ':t'
 Plug 'rking/ag.vim'                                                 " ag - Silver Searcher plugin (the fastest searcher)
 let g:ag_working_path_mode="r"                                      " ag > start searching from your project root instead of the cwd
 Plug 'ctrlpvim/ctrlp.vim'                                           " ctrp+p Plugin - Fuzzy Finder Plugin
@@ -175,12 +180,15 @@ Plug 'ngmy/vim-rubocop'                                             " rubocop - 
 let g:vimrubocop_config = '~/rubocop.yml'
 let g:vimrubocop_keymap = 0
 Plug 'scrooloose/syntastic'                                         " syntastic - Syntax Checker
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [],'passive_filetypes': [] }
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-"let g:syntastic_check_on_open = 0
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_enable_perl_checker = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height=2                                   " Height of syntastic errors
 Plug 'ervandew/supertab'                                            " supertab - To autocomplete with tab   - TO BE REMOVED
 Plug 'majutsushi/tagbar'                                            " tagbar
 Plug 'bronson/vim-trailing-whitespace'                              " trailing-whitespace - Mark trailing whitespaces in red
