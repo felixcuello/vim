@@ -62,6 +62,8 @@ let mapleader=","                                                   " Yes!, comm
 map <leader><CR> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " ,a    | Tab left
 map <leader>a :tabprevious<CR>
+" ,d    | Open Method's Definition
+map <leader>d :TagbarOpenAutoClose<CR>
 " ,cr   | Checks for ruby syntax
 map <leader>cr :!ruby -c %<CR>
 " ,e    | Check syntax
@@ -82,8 +84,6 @@ map <leader>gp :Gpush<CR>
 map <leader>gs :Gstatus<CR>
 " ,gu   | git pull <file>
 map <leader>gu :Gpull<CR>
-" ,m    | Open Method's Definition
-map <leader>m :TagbarToggle<CR><C-w><C-w>
 " ,s    | Tab right
 map <leader>s :tabnext<CR>
 " ,q    | Previous Buffer
