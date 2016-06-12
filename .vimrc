@@ -120,11 +120,12 @@ set t_Co=256                                        " Terminal Colors (Yeah 256 
 set wildmenu                                        " show a navigable menu for tab completion
 set wildmode=longest,list,full                      " More configurations for wild-menu
 set colorcolumn=110                                 " Set a visual wrap line
-highlight ColorColumn guibg=red3                    " Set Red Color for visual wrap line
-highlight ColorColumn ctermbg=red                   " Set Red Color for visual wrap line
 set guifont=Roboto\ Mono\ light\ for\ Powerline:h15 " I really like this font
 set autochdir                                       " ctags configuration
 set tags=tags;                                      " ctags configuration
+set mouse=a                                         " Make mouse work in the terminal
+highlight ColorColumn guibg=red3                    " Set Red Color for visual wrap line
+highlight ColorColumn ctermbg=red                   " Set Red Color for visual wrap line
 
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
