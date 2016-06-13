@@ -54,12 +54,12 @@
 map <C-f> :Ag! --hidden -a <C-R><C-W><CR>
 " <C-CR> Open Definition (ctags)
 map <C-CR> <C-]>
+map <leader>, <C-]>
 " <C-BS> Go back from the definition
 map <C-BS> <C-t>
+map <leader>.  <C-t>
 
 let mapleader=","                                                   " Yes!, comma must be the leader
-" ,<CR> | Open definition in a new tab
-map <leader><CR> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " ,a    | Tab left
 map <leader>a :tabprevious<CR>
 " ,d    | Open Method's Definition
