@@ -54,10 +54,10 @@
 map <C-f> :Ag! --hidden -a <C-R><C-W><CR>
 " <C-CR> Open Definition (ctags)
 map <C-CR> <C-]>
-map <leader>, <C-]>
+map <leader><CR> <C-]>
 " <C-BS> Go back from the definition
 map <C-BS> <C-t>
-map <leader>.  <C-t>
+map <leader><leader>  <C-t>
 
 let mapleader=","                                                   " Yes!, comma must be the leader
 " ,a    | Tab left
@@ -84,6 +84,8 @@ map <leader>gp :Gpush<CR>
 map <leader>gs :Gstatus<CR>
 " ,gu   | git pull <file>
 map <leader>gu :Gpull<CR>
+" ,l    | Toggle limelight
+map <leader>l :Limelight!!0.8<CR>
 " ,s    | Tab right
 map <leader>s :tabnext<CR>
 " ,q    | Previous Buffer
@@ -173,6 +175,7 @@ Plug 'ctrlpvim/ctrlp.vim'                                           " ctrp+p Plu
 Plug 'Raimondi/delimitMate'                                         " delimitmate - Autocomplete braces and quotes
 Plug 'tpope/vim-fugitive'                                           " fugitive - GIT with stereoids for vim
 Plug 'airblade/vim-gitgutter'                                       " gitgutter - To see git changes beside line numbers
+Plug 'junegunn/limelight.vim'                                       " limelight - Fade unimportant things while writing
 Plug 'terryma/vim-multiple-cursors'                                 " vim-multiple-cursors - To edit files w/multiple cursors
 Plug 'scrooloose/nerdtree'                                          " nerdtree - Very nice file manager
 Plug 'jistr/vim-nerdtree-tabs'                                      " nerdtree - Tabs, to use tabs painlessly
