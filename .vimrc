@@ -177,6 +177,7 @@ Plug 'tpope/vim-fugitive'                                           " fugitive -
 Plug 'airblade/vim-gitgutter'                                       " gitgutter - To see git changes beside line numbers
 Plug 'junegunn/limelight.vim'                                       " limelight - Fade unimportant things while writing
 Plug 'terryma/vim-multiple-cursors'                                 " vim-multiple-cursors - To edit files w/multiple cursors
+Plug 'scrooloose/nerdcommenter'                                     " nerdcommenter - Comment code easily
 Plug 'scrooloose/nerdtree'                                          " nerdtree - Very nice file manager
 Plug 'jistr/vim-nerdtree-tabs'                                      " nerdtree - Tabs, to use tabs painlessly
 Plug 'galli-a/persistentvisuals'                                    " persistentvisuals - This is nice when you use < or > to reindent
