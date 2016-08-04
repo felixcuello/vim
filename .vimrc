@@ -54,10 +54,8 @@
 map <C-f> :Ag! --hidden -a <C-R><C-W><CR>
 " <C-CR> Open Definition (ctags)
 map <C-CR> <C-]>
-map <leader><CR> <C-]>
 " <C-BS> Go back from the definition
 map <C-BS> <C-t>
-map <leader><leader>  <C-t>
 
 let mapleader=","                                                   " Yes!, comma must be the leader
 " ,a    | Tab left
@@ -84,7 +82,7 @@ map <leader>gp :Gpush<CR>
 map <leader>gs :Gstatus<CR>
 " ,gu   | git pull <file>
 map <leader>gu :Gpull<CR>
-" ,l    | Toggle limelight
+" ,l    | Toggle limelight (AKA focusin)
 map <leader>l :Limelight!!0.8<CR>
 " ,s    | Tab right
 map <leader>s :tabnext<CR>
@@ -109,7 +107,7 @@ set undodir=~/.vim/undo_files/
 "  General Vim Configuration
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 syntax on                                           " Who can work without syntax highlighting
-colorscheme molokai
+colorscheme valloric
 
 set binary                                          " Don't remember :-) (?)
 set encoding=utf-8                                  " Set encoding to UTF8
@@ -160,6 +158,7 @@ Plug 'tomasr/molokai'                                               " molokai - 
 Plug 'sickill/vim-monokai'                                          " monokai - Nice colorscheme
 Plug 'Valloric/vim-valloric-colorscheme'                            " valoric - High contrast colorscheme
 Plug 'sjl/badwolf'                                                  " badwolf - Good high contrats colorscheme
+Plug 'rakr/vim-one'                                                 " test XXX
 
 Plug 'bling/vim-airline'                                            " airline - a very nice statys line
 Plug 'vim-airline/vim-airline-themes'                               " airline - themes
@@ -195,6 +194,11 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height=2                                   " Height of syntastic errors
 Plug 'ervandew/supertab'                                            " supertab - To autocomplete with tab   - TO BE REMOVED
+let g:SuperTabLongestEnhanced = 1
+let g:SuperTabLeadingSpaceCompletion = 0
+let g:SuperTabClosePreviewOnPopupClose = 1
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextDefaultCompletionType ="<C-X><C-O>"
 Plug 'majutsushi/tagbar'                                            " tagbar
 Plug 'bronson/vim-trailing-whitespace'                              " trailing-whitespace - Mark trailing whitespaces in red
 Plug 'Valloric/YouCompleteMe'                                       " YouCompleteMe
