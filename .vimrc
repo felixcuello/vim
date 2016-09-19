@@ -94,7 +94,7 @@ map <leader>s :tabnext<CR>
 " ,r    | Check Ruby Syntax
 map <Leader>r :RuboCop<CR>
 " ,t    | Open Tree Directory
-map <leader>t :NERDTree<CR>
+map <leader>t :NERDTreeToggle<CR>
 
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
