@@ -40,7 +40,7 @@
 "  $ ln -s ~/.vim/plugged/vim-valloric-colorscheme/colors/valloric.vim ~/.vim/colors
 "  $ ln -s ~/.vim/plugged/idle/colors/idle.vim ~/.vim/colors
 "  $ ln -s ~/.vim/plugged/badwolf/colors/badwolf.vim ~/.vim/colors
-"  $ ln -s ~/.vim/plugged/molokai_dark/colors/molokai_dark.vim ~/.vim/colors/
+"  $ ln -s ~/.vim/plugged/molokai-dark/colors/molokai-dark.vim ~/.vim/colors/
 "
 "
 " 4. You must install these fonts if you want to see special characters in the
