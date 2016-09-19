@@ -40,6 +40,7 @@
 "  $ ln -s ~/.vim/plugged/vim-valloric-colorscheme/colors/valloric.vim ~/.vim/colors
 "  $ ln -s ~/.vim/plugged/idle/colors/idle.vim ~/.vim/colors
 "  $ ln -s ~/.vim/plugged/badwolf/colors/badwolf.vim ~/.vim/colors
+"  $ ln -s ~/.vim/plugged/molokai_dark/colors/molokai_dark.vim ~/.vim/colors/
 "
 "
 " 4. You must install these fonts if you want to see special characters in the
@@ -53,7 +54,7 @@
 let mapleader=","          " Yes!, comma must be the leader
 
 " Find in this file
-map <C-f> /
+map <leader>f /
 " <C-CR> Open Definition (ctags)
 map <C-CR> <C-]>
 map <leader>, <C-]>
@@ -69,7 +70,7 @@ map <leader>cr :!ruby -c %<CR>
 " ,e    | Check syntax
 map <leader>e :SyntasticCheck<CR>
 " ,f    | Find everywhere
-map <leader>f :Ag! --hidden -a <C-R><C-W><CR>
+map <C-f> :Ag! --hidden -a <C-R><C-W><CR>
 " ,g-   | git checkout -- <file>
 map <leader>g- :Git checkout -- %<CR>
 " ,ga   | git add <file>
@@ -159,6 +160,7 @@ set tabstop=2                           " Tab should be 4
 call plug#begin('~/.vim/plugged')
 Plug 'pkukulak/idle'                                                " idle    - Testing this colorscheme for Ruby
 Plug 'tomasr/molokai'                                               " molokai - Sublime like colorscheme
+Plug 'pR0Ps/molokai-dark'                                           " molokai_dark - A better version
 Plug 'sickill/vim-monokai'                                          " monokai - Nice colorscheme
 Plug 'Valloric/vim-valloric-colorscheme'                            " valoric - High contrast colorscheme
 Plug 'sjl/badwolf'                                                  " badwolf - Good high contrats colorscheme
