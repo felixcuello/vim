@@ -50,14 +50,16 @@
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 "  3. Shortcuts!
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-" <C-f>  Find everywhere
-map <C-f> :Ag! --hidden -a <C-R><C-W><CR>
+let mapleader=","          " Yes!, comma must be the leader
+
+" Find in this file
+map <C-f> /
 " <C-CR> Open Definition (ctags)
 map <C-CR> <C-]>
+map <leader>, <C-]>
 " <C-BS> Go back from the definition
 map <C-BS> <C-t>
-
-let mapleader=","                                                   " Yes!, comma must be the leader
+map <leader>. <C-t>
 " ,a    | Tab left
 map <leader>a :tabprevious<CR>
 " ,d    | Open Method's Definition
@@ -66,6 +68,8 @@ map <leader>d :TagbarOpenAutoClose<CR>
 map <leader>cr :!ruby -c %<CR>
 " ,e    | Check syntax
 map <leader>e :SyntasticCheck<CR>
+" ,f    | Find everywhere
+map <leader>f :Ag! --hidden -a <C-R><C-W><CR>
 " ,g-   | git checkout -- <file>
 map <leader>g- :Git checkout -- %<CR>
 " ,ga   | git add <file>
@@ -86,14 +90,10 @@ map <leader>gu :Gpull<CR>
 map <leader>l :Limelight!!0.8<CR>
 " ,s    | Tab right
 map <leader>s :tabnext<CR>
-" ,q    | Previous Buffer
-map <leader>q :cp<CR>
 " ,r    | Check Ruby Syntax
 map <Leader>r :RuboCop<CR>
 " ,t    | Open Tree Directory
 map <leader>t :NERDTreeTabsToggle<CR>
-" ,w    | Next buffer
-map <leader>w :cn<CR>
 
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -107,7 +107,11 @@ set undodir=~/.vim/undo_files/
 "  General Vim Configuration
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 syntax on                                           " Who can work without syntax highlighting
-colorscheme valloric
+set t_Co=256
+set background=dark
+colorscheme molokai_dark
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
 
 set binary                                          " Don't remember :-) (?)
 set encoding=utf-8                                  " Set encoding to UTF8
@@ -116,11 +120,11 @@ set laststatus=2                                    " Status line always present
 set nowrap                                          " If you're a good coder, you shouldn't note the difference
 set noeol                                           " Not end of line (?)
 set number                                          " Numbering lines
-set t_Co=256                                        " Terminal Colors (Yeah 256 colors is enough)
 set wildmenu                                        " show a navigable menu for tab completion
 set wildmode=longest,list,full                      " More configurations for wild-menu
 set colorcolumn=110                                 " Set a visual wrap line
-set guifont=Roboto\ Mono\ light\ for\ Powerline:h15 " I really like this font
+"set guifont=Roboto\ Mono\ light\ for\ Powerline:h15 " I really like this font
+set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h15 " I really like this font
 set autochdir                                       " ctags configuration
 set tags=tags;                                      " ctags configuration
 set mouse=a                                         " Make mouse work in the terminal
@@ -158,7 +162,7 @@ Plug 'tomasr/molokai'                                               " molokai - 
 Plug 'sickill/vim-monokai'                                          " monokai - Nice colorscheme
 Plug 'Valloric/vim-valloric-colorscheme'                            " valoric - High contrast colorscheme
 Plug 'sjl/badwolf'                                                  " badwolf - Good high contrats colorscheme
-Plug 'rakr/vim-one'                                                 " test XXX
+Plug 'roosta/vim-srcery'                                            " vim-srcery
 
 Plug 'bling/vim-airline'                                            " airline - a very nice statys line
 Plug 'vim-airline/vim-airline-themes'                               " airline - themes
@@ -174,6 +178,7 @@ Plug 'ctrlpvim/ctrlp.vim'                                           " ctrp+p Plu
 Plug 'Raimondi/delimitMate'                                         " delimitmate - Autocomplete braces and quotes
 Plug 'tpope/vim-fugitive'                                           " fugitive - GIT with stereoids for vim
 Plug 'airblade/vim-gitgutter'                                       " gitgutter - To see git changes beside line numbers
+nmap <C-i> <leader>ig
 Plug 'junegunn/limelight.vim'                                       " limelight - Fade unimportant things while writing
 Plug 'terryma/vim-multiple-cursors'                                 " vim-multiple-cursors - To edit files w/multiple cursors
 Plug 'scrooloose/nerdcommenter'                                     " nerdcommenter - Comment code easily
@@ -200,6 +205,7 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType ="<C-X><C-O>"
 Plug 'majutsushi/tagbar'                                            " tagbar
+Plug 'felixcuello/taghighlight'                                     " TagHighlight - This is to highlight also the tags
 Plug 'bronson/vim-trailing-whitespace'                              " trailing-whitespace - Mark trailing whitespaces in red
 Plug 'Valloric/YouCompleteMe'                                       " YouCompleteMe
 
