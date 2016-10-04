@@ -110,7 +110,7 @@ set undodir=~/.vim/undo_files/
 syntax on                                           " Who can work without syntax highlighting
 set t_Co=256
 set background=dark
-colorscheme molokai_dark
+colorscheme monokai
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
 
@@ -187,6 +187,7 @@ Plug 'scrooloose/nerdcommenter'                                     " nerdcommen
 Plug 'scrooloose/nerdtree'                                          " nerdtree - Very nice file manager
 "Plug 'jistr/vim-nerdtree-tabs'                                      " nerdtree - Tabs, to use tabs painlessly
 let NERDTreeQuitOnOpen=1
+let g:NERDTreeChDirMode = 2
 Plug 'galli-a/persistentvisuals'                                    " persistentvisuals - This is nice when you use < or > to reindent
 Plug 'ngmy/vim-rubocop'                                             " rubocop - Ruby specific to check syntax
 let g:vimrubocop_config = '~/rubocop.yml'
