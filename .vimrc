@@ -152,6 +152,7 @@ set nocindent                           " Good autoindent :-)
 set softtabstop=2                       " insert mode tab and backspace
 set shiftwidth=2                        " Don't Remember
 set tabstop=2                           " Tab should be 4
+set softtabstop=0                       " Don't want tabs at any cost
 
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
