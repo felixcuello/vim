@@ -62,7 +62,7 @@ map <leader>, <C-]>
 " Open ctag definition (NEW TAB!)
 map <leader>; <C-w><C-]><C-w>T
 " Open ctag definition (LIST!)
-map <leader>,m :ts
+map <leader>m :ts
 " <C-BS> Go back from the definition
 map <C-BS> <C-t>
 map <leader>. <C-t>
