@@ -58,10 +58,10 @@ map <leader>f /
 " <C-CR> Open Definition (ctags)
 map <C-CR> <C-]>
 map <leader>, <C-]>
+map <leader>; <C-w><C-]><C-w>T
 " <C-BS> Go back from the definition
 map <C-BS> <C-t>
-"map <leader>. <C-t>
-map <leader>; <C-w><C-]><C-w>T
+map <leader>. <C-t>
 " ,a    | Tab left
 map <leader>a :tabprevious<CR>
 " ,d    | Open Method's Definition
