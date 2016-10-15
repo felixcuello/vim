@@ -60,7 +60,8 @@ map <C-CR> <C-]>
 map <leader>, <C-]>
 " <C-BS> Go back from the definition
 map <C-BS> <C-t>
-map <leader>. <C-t>
+"map <leader>. <C-t>
+map <leader>; <C-w><C-]><C-w>T
 " ,a    | Tab left
 map <leader>a :tabprevious<CR>
 " ,d    | Open Method's Definition
@@ -110,7 +111,7 @@ set undodir=~/.vim/undo_files/
 syntax on                                           " Who can work without syntax highlighting
 set t_Co=256
 set background=dark
-colorscheme monokai
+colorscheme molokai_dark
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
 
@@ -128,7 +129,7 @@ set colorcolumn=110                                 " Set a visual wrap line
 set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h15 " I really like this font
 set autochdir                                       " ctags configuration
 set tags=tags;                                      " ctags configuration
-set mouse=a                                         " Make mouse work in the terminal
+"set mouse=a                                         " Make mouse work in the terminal
 highlight ColorColumn guibg=red3                    " Set Red Color for visual wrap line
 highlight ColorColumn ctermbg=red                   " Set Red Color for visual wrap line
 
@@ -147,13 +148,8 @@ set smartcase                           " Use case sensitive smart
 " To Tab Or Not To Tab, that's the flame-war
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 set autoindent                          " Autoindent
-set expandtab                           " Use spaces instead tab
 set nocindent                           " Good autoindent :-)
-set softtabstop=2                       " insert mode tab and backspace
-set shiftwidth=2                        " Don't Remember
-set tabstop=2                           " Tab should be 4
-set softtabstop=0                       " Don't want tabs at any cost
-
+set tabstop=2 shiftwidth=2 expandtab
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 "  Plugins! (and its configurations)
