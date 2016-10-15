@@ -57,8 +57,12 @@ let mapleader=","          " Yes!, comma must be the leader
 map <leader>f /
 " <C-CR> Open Definition (ctags)
 map <C-CR> <C-]>
+" Open ctag definition
 map <leader>, <C-]>
+" Open ctag definition (NEW TAB!)
 map <leader>; <C-w><C-]><C-w>T
+" Open ctag definition (LIST!)
+map <leader>,m :ts
 " <C-BS> Go back from the definition
 map <C-BS> <C-t>
 map <leader>. <C-t>
