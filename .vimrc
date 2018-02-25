@@ -84,6 +84,8 @@ map <leader>ga :Gwrite<CR>
 map <leader>gb :Gblame<CR>
 " ,gc   | git commit <file>
 map <leader>gc :Gcommit<CR>
+" ,gc   | git commit <file>
+map <leader>gd :Gvdiff<CR>
 " ,gr   | git reset <file>
 map <leader>gr :Git reset %<CR>
 " ,gp   | git push <file>
@@ -116,8 +118,8 @@ syntax on                                           " Who can work without synta
 set t_Co=256
 set background=dark
 colorscheme molokai
-highlight Normal ctermbg=NONE
-highlight nonText ctermbg=NONE
+"highlight Normal ctermbg=NONE
+"highlight nonText ctermbg=NONE
 
 set binary                                          " Don't remember :-) (?)
 set encoding=utf-8                                  " Set encoding to UTF8
@@ -212,6 +214,6 @@ let g:SuperTabContextDefaultCompletionType ="<C-X><C-O>"
 Plug 'majutsushi/tagbar'                                            " tagbar
 Plug 'felixcuello/taghighlight'                                     " TagHighlight - This is to highlight also the tags
 Plug 'bronson/vim-trailing-whitespace'                              " trailing-whitespace - Mark trailing whitespaces in red
-Plug 'Valloric/YouCompleteMe'                                       " YouCompleteMe
+"Plug 'Valloric/YouCompleteMe'                                       " YouCompleteMe
 
 call plug#end()
