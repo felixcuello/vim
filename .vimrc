@@ -117,7 +117,7 @@ set undodir=~/.vim/undo_files/
 syntax on                                           " Who can work without syntax highlighting
 set t_Co=256
 set background=dark
-colorscheme molokai
+colorscheme badwolf
 "highlight Normal ctermbg=NONE
 "highlight nonText ctermbg=NONE
 
