@@ -171,7 +171,7 @@ Plug 'roosta/vim-srcery'                                            " vim-srcery
 
 Plug 'bling/vim-airline'                                            " airline - a very nice statys line
 Plug 'vim-airline/vim-airline-themes'                               " airline - themes
-let g:airline_theme = 'light'
+let g:airline_theme = 'dark'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
