@@ -68,6 +68,12 @@ map <C-BS> <C-t>
 map <leader>. <C-t>
 " ,a    | Tab left
 map <leader>a :tabprevious<CR>
+" ,s    | Tab right
+map <leader>s :tabnext<CR>
+" ,n    | Tab new
+map <leader>n :tabnew<CR>
+" ,o    | Tab edit
+map <leader>o :tabedit<SPACE>
 " ,d    | Open Method's Definition
 map <leader>d :TagbarOpenAutoClose<CR>
 " ,cr   | Checks for ruby syntax
@@ -96,8 +102,6 @@ map <leader>gs :Gstatus<CR>
 map <leader>gu :Gpull<CR>
 " ,l    | Toggle limelight (AKA focusin)
 map <leader>l :Limelight!!0.8<CR>
-" ,s    | Tab right
-map <leader>s :tabnext<CR>
 " ,r    | Check Ruby Syntax
 map <Leader>r :RuboCop<CR>
 " ,t    | Open Tree Directory
@@ -117,7 +121,7 @@ set undodir=~/.vim/undo_files/
 syntax on                                           " Who can work without syntax highlighting
 set t_Co=256
 set background=dark
-colorscheme badwolf
+colorscheme molokai
 "highlight Normal ctermbg=NONE
 "highlight nonText ctermbg=NONE
 
