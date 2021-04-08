@@ -221,3 +221,5 @@ Plug 'bronson/vim-trailing-whitespace'                              " trailing-w
 "Plug 'Valloric/YouCompleteMe'                                       " YouCompleteMe
 
 call plug#end()
+
+set paste
